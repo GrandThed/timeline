@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
 .blog {
   &-gallery {
     max-width: 1200px;
     margin: auto 1em;
+    font-family: roboto;
+    font-weight: 500;
     &-section {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -9,19 +13,25 @@
       margin: 0 0 1.5em;
       padding: 0 0 1.5em;
       &-card {
+        transition: box-shadow 200ms;
+        &:hover {
+          box-shadow: rgba(99, 99, 99, 0.322) 0px 4px 12px 0px;
+        }
+        cursor: pointer;
+        border: 1px solid white;
         line-height: 1.2;
         border-radius: 8px;
         *:not(img) {
           padding: 0 20px;
         }
         min-height: 200px;
-        height: 500px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        height: 400px;
+        box-shadow: #63636333 0px 2px 8px 0px;
         img {
-          box-shadow: rgba(#1ecad3, 0.8) 0px 7px 0px;
+          // box-shadow: rgba(#1ecad3, 0.8) 0px 5px 0px;
           border-radius: 8px;
           width: 100%;
-          height: 300px;
+          height: 200px;
           object-fit: cover;
         }
         p,
@@ -35,11 +45,14 @@
           line-height: 1;
           -webkit-line-clamp: 4;
           line-clamp: 4;
+          font-weight: 300;
         }
         h2 {
           color: #1ecad3;
+          // color: rgb(54, 54, 54);
           -webkit-line-clamp: 2;
           line-clamp: 2;
+          font-weight: 400;
         }
       }
     }
@@ -73,14 +86,22 @@
     border-bottom: 10px solid #1ecad3;
     font-size: 2em;
     text-transform: uppercase;
-    color: rgb(44, 44, 44);
+    color: #303030;
     text-align: center;
     margin: 0 10px;
   }
   p {
+    cursor: pointer;
+    color: #303030;
     width: 100%;
     text-align: center;
     font-size: large;
+  }
+  span {
+    color: #1ecad3;
+    font-family: monospace;
+    font-size: 1.5em;
+    vertical-align: -1px;
   }
 }
 
@@ -100,16 +121,28 @@
       grid-template-areas:
         "til til card1 card1 card1 card1"
         "card2 card2 card2 card3 card3 card3";
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     }
     &-variant-2 {
       grid-template-areas:
         "card1 card1 card1 card1 til til"
         "card2 card2 card2 card3 card3 card3";
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1fr 2fr 1fr;
     }
   }
   &4 {
+    &-variant-1 {
+      grid-template-areas:
+        "til til card1 card1 card2 card2"
+        "card3 card3 card3 card4 card4 card4";
+      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    }
+    &-variant-2 {
+      grid-template-areas:
+        "til card1 card2"
+        "card3 card3 card4";
+      grid-template-columns: 3fr 5fr 5fr;
+    }
   }
 }
 
@@ -125,5 +158,31 @@
 }
 
 .blog-gallery-section:not(.blog-gallery-section:last-child) {
-  border-bottom: 3px solid #00000009
+  border-bottom: 5px solid #00000009;
+}
+
+@media screen and (min-width: 1600px) {
+  .blog-gallery-section {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    &-title {
+      align-items: center;
+      min-width: 400px;
+      max-width: 400px;
+    }
+    &-card {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+    margin: 0 0 3em;
+    padding: 0 0 3em;
+  }
+
+  .blog {
+    &-gallery {
+      margin: 0 3em;
+      max-width: unset;
+    }
+  }
 }

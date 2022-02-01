@@ -34,7 +34,9 @@ const BlogGallery = () => {
           >
             <div className="blog-gallery-section-title">
               <h2>{category}</h2>
-              <p>Ver Más</p>
+              <p>
+                Ver Más <span>{">"}</span>
+              </p>
             </div>
             {blogsByCategory[category].map((blog, blogIndex) => {
               return (
