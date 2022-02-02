@@ -1,9 +1,10 @@
 import React from "react";
+import BlogCalleryCards from "./BlogCalleryCards";
 import "./blogGallery.scss";
 import { blogs } from "./blogs";
 
 const BlogGallery = () => {
-  // el objeto blogs es importado arriba
+  // el objeto blogs mockup es importado arriba
   const blogsByCategory = blogs.reduce((acc, blog) => {
     if (acc[blog.category]) {
       // categoria ya existente
@@ -22,36 +23,11 @@ const BlogGallery = () => {
   return (
     <div className="blog-gallery">
       {sortedCategories.map((category, index) => {
+        
+
         return (
-          <section
-            key={index}
-            className={
-              "blog-gallery-section blog-section-amount-" +
-              blogsByCategory[category].length +
-              "-variant-" +
-              ((index % 2) + 1)
-            }
-          >
-            <div className="blog-gallery-section-title">
-              <h2>{category}</h2>
-              <p>
-                Ver Más <span>{">"}</span>
-              </p>
-            </div>
-            {blogsByCategory[category].map((blog, blogIndex) => {
-              return (
-                <div
-                  className={
-                    "blog-gallery-section-card blog-gallery-section-card-num-" +
-                    blogIndex
-                  }
-                >
-                  <img src={blog.image} alt="" />
-                  <h2>{blog.title}</h2>
-                  <p>{blog.description}</p>
-                </div>
-              );
-            })}
+          <section key={index} className="blog-gallery-section">
+            <BlogCalleryCards category={category} blogs={blogsByCategory[category]} />
           </section>
         );
       })}

@@ -11,9 +11,30 @@ export const blogs = [
     category: "Tecnología Educación Cultura",
   },
   {
-    title: "Cómo implementar una estrategia de pruebas E2E exitosa ",
+    title: "La técnica número uno para no aburrirte en tu trabajo ",
     description:
-    "Conocé qué herramientas o recursos se utilizan a diario para mantenerse up-to-date y libre de aburrimiento. …",
+      "Conocé los principales beneficios de automatizar pruebas, la inversión requerida y los resultados cuantitativos que obtuvimos en un proyecto particular. …",
+    image: image2,
+    category: "Tecnología Educación Cultura",
+  },
+  {
+    title: "La técnica número uno para no aburrirte en tu trabajo ",
+    description:
+      "Conocé los principales beneficios de automatizar pruebas, la inversión requerida y los resultados cuantitativos que obtuvimos en un proyecto particular. …",
+    image: image3,
+    category: "Tecnología Educación Cultura",
+  },
+  {
+    title: "La técnica número uno para no aburrirte en tu trabajo ",
+    description:
+      "Conocé los principales beneficios de automatizar pruebas, la inversión requerida y los resultados cuantitativos que obtuvimos en un proyecto particular. …",
+    image: image1,
+    category: "Tecnología Educación Cultura",
+  },
+  {
+    title: "La técnica número uno para no aburrirte en tu trabajo ",
+    description:
+      "Conocé los principales beneficios de automatizar pruebas, la inversión requerida y los resultados cuantitativos que obtuvimos en un proyecto particular. …",
     image: image2,
     category: "Tecnología Educación Cultura",
   },
@@ -45,5 +66,4 @@ export const blogs = [
     image: image3,
     category: "Conocé nuestras herramientas",
   },
-  
 ];
